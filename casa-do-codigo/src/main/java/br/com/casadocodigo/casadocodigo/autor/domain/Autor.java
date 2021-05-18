@@ -29,6 +29,7 @@ public class Autor {
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
 	
+	
 	public Autor() {
 	}
 

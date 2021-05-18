@@ -25,6 +25,13 @@ public class AutorRequestDTO {
 	public Autor transformarParaAutor() {
 		   return new Autor(nome,email,descricao);
 	}
+
+
+	public String getEmail() {
+		return email;
+	}
+	
+	
 	
 	
 }
