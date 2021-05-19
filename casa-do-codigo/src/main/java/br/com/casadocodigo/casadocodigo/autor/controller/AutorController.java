@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.casadocodigo.casadocodigo.autor.domain.Autor;
 import br.com.casadocodigo.casadocodigo.autor.domain.AutorRepository;
 import br.com.casadocodigo.casadocodigo.autor.domain.AutorRequestDTO;
-import br.com.casadocodigo.casadocodigo.autor.domain.AutorResponseDTO;
+
 
 @RestController
 @RequestMapping("/autores")
@@ -38,7 +38,7 @@ public class AutorController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<AutorResponseDTO> salvarAutor(@RequestBody @Valid AutorRequestDTO autorDTO) {
+	public ResponseEntity<?> salvarAutor(@RequestBody @Valid AutorRequestDTO autorDTO) {
 		
 		Autor autor = autorDTO.transformarParaAutor();
 		

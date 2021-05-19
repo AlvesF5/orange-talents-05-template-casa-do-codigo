@@ -1,6 +1,5 @@
 package br.com.casadocodigo.casadocodigo.autor.domain;
 
-import javax.persistence.Lob;
 
 public class AutorRequestDTO {
    private String nome;

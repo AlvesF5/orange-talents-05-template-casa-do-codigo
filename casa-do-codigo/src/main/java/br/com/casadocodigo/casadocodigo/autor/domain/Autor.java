@@ -29,7 +29,7 @@ public class Autor {
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
 	
-	
+	@Deprecated
 	public Autor() {
 	}
 
