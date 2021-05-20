@@ -2,7 +2,9 @@ package br.com.casadocodigo.casadocodigo.autor.domain;
 
 
 public class AutorRequestDTO {
+	
    private String nome;
+   @UniqueValue(domainClass = Autor.class, fieldName = "email")
    private String email;
    private String descricao;
    

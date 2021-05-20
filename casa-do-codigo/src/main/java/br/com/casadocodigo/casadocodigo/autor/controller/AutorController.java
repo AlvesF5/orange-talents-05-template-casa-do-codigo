@@ -28,7 +28,7 @@ public class AutorController {
 	
 	@Autowired
 	private AutorRepository autorRepository;
-	
+	/*
 	@Autowired
 	private VerificaEmailDuplicadoAutorValidator verificaEmailDuplicadoAutorValidator;
 	
@@ -36,7 +36,7 @@ public class AutorController {
 	public void init(WebDataBinder binder) {
 		binder.addValidators(verificaEmailDuplicadoAutorValidator);
 	}
-	
+	*/
 	@PostMapping
 	public ResponseEntity<?> salvarAutor(@RequestBody @Valid AutorRequestDTO autorDTO) {
 		

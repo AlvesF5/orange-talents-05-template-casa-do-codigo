@@ -22,6 +22,7 @@ public class CategoriaController {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
+	/*
 	@Autowired
 	private VerificaNomeDuplicadoCategoriaValidador verificaNomeDuplicadoCategoriaValidador;
 	
@@ -29,6 +30,7 @@ public class CategoriaController {
 	public void init(WebDataBinder binder) {
 		binder.addValidators(verificaNomeDuplicadoCategoriaValidador);
 	}
+	*/
 	
 	@PostMapping
 	public ResponseEntity<?> novaCategoria(@RequestBody @Valid CategoriaRequestDTO categoriaDTO){
