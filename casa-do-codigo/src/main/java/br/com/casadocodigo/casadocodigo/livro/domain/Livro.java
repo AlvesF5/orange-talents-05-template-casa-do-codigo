@@ -125,6 +125,13 @@ public class Livro {
 	public Autor getAutor() {
 		return autor;
 	}
+
+	@Override
+	public String toString() {
+		return "Livro [titulo=" + titulo + ", resumo=" + resumo + ", sumario=" + sumario + ", preco="
+				+ preco + ", numeroPaginas=" + numeroPaginas + ", isbn=" + isbn + ", dataPublicacao=" + dataPublicacao
+				+ ", categoria=" + categoria.toString() + ", autor=" + autor.toString() + "]";
+	}
 	
 
 	

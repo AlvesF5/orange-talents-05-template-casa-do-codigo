@@ -3,6 +3,7 @@ package br.com.casadocodigo.casadocodigo.livro.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,6 +12,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,6 +50,16 @@ public class LivroController {
 		List<Livro> livros = livroRepository.findAll();
 		
 		return ResponseEntity.ok(LivroResponseDTO.converter(livros));
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<String> detalhesLivro(@PathVariable("id") Long id) {
+		
+		Optional<Livro> livro = livroRepository.findById(id);
+		if(livro.isPresent()) {
+		return ResponseEntity.ok(LivroResponseDTO.detalhesLivro(livro));
+		}else
+			return ResponseEntity.badRequest().body("Nenhum livro encontrado com esse ID");
 	}
 
 }

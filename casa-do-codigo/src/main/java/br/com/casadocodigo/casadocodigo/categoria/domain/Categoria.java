@@ -35,6 +35,14 @@ public class Categoria {
 	public Long getId() {
 		return id;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Categoria [nome=" + nome + "]";
+	}
+	
+	
 	
 	
 	

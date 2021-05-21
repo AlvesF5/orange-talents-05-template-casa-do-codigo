@@ -58,6 +58,12 @@ public class Autor {
 	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
+
+	@Override
+	public String toString() {
+		return "Autor [nome=" + nome + ", email=" + email + ", descricao=" + descricao + ", dataCriacao="
+				+ dataCriacao + "]";
+	}
 	
 	
 	
