@@ -30,6 +30,11 @@ public class Categoria {
 	public String getNome() {
 		return nome;
 	}
+
+
+	public Long getId() {
+		return id;
+	}
 	
 	
 	

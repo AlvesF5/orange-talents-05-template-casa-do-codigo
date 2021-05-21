@@ -1,5 +1,4 @@
-package br.com.casadocodigo.casadocodigo.autor.domain;
-
+package br.com.casadocodigo.casadocodigo.livro.domain;
 
 import java.util.List;
 
@@ -11,7 +10,9 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.util.Assert;
 
-public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Object> {
+
+
+public class ExisteIdValidator implements ConstraintValidator<ExisteId, Object> {
 	
 	private String domainAttribute;
 	private Class<?> classe;
@@ -20,7 +21,7 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
 	private EntityManager manager;
 	
 	@Override
-	public void initialize(UniqueValue params) {
+	public void initialize(ExisteId params) {
 		domainAttribute = params.fieldName();
 		classe = params.domainClass();
 	}
@@ -28,13 +29,12 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
 
 	@Override
 	public boolean isValid(Object value, ConstraintValidatorContext context) {
-		
-		Query query =  manager.createQuery("select 1 from "+classe.getName()+" where " +domainAttribute+"=:value");
+		Query query =  manager.createQuery("select 1 from " + classe.getName()+" where " +domainAttribute+"=:value");
 		query.setParameter("value",value);
 		List<?> list = query.getResultList();
-		Assert.state(list.size() <=1, "Foi encontrado mais de um"+classe+"com o atributo"+domainAttribute);
-		return list.isEmpty();
-		
+		return !list.isEmpty();
 	}
+	
+	
 
 }
