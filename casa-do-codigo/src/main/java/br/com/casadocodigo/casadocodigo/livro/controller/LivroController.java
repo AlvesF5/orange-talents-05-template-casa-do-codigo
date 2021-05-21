@@ -59,7 +59,7 @@ public class LivroController {
 		if(livro.isPresent()) {
 		return ResponseEntity.ok(LivroResponseDTO.detalhesLivro(livro));
 		}else
-			return ResponseEntity.badRequest().body("Nenhum livro encontrado com esse ID");
+			return ResponseEntity.notFound().build();
 	}
 
 }
