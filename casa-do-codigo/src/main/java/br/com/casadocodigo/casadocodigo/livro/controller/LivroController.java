@@ -1,7 +1,5 @@
 package br.com.casadocodigo.casadocodigo.livro.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,11 +51,10 @@ public class LivroController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<String> detalhesLivro(@PathVariable("id") Long id) {
-		
+	public ResponseEntity<LivroResponseDTO> detalhesLivro(@PathVariable("id") Long id) {
 		Optional<Livro> livro = livroRepository.findById(id);
 		if(livro.isPresent()) {
-		return ResponseEntity.ok(LivroResponseDTO.detalhesLivro(livro));
+		return ResponseEntity.ok( new LivroResponseDTO(livro));
 		}else
 			return ResponseEntity.notFound().build();
 	}

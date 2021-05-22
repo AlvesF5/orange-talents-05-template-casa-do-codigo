@@ -51,7 +51,7 @@ public class Livro {
 	
 	@NotNull
 	@Min(100)
-	private int numeroPaginas;
+	private Integer numeroPaginas;
 	
 	@NotBlank
 	@NotNull
@@ -106,7 +106,7 @@ public class Livro {
 		return preco;
 	}
 
-	public int getNumeroPaginas() {
+	public Integer getNumeroPaginas() {
 		return numeroPaginas;
 	}
 
@@ -125,19 +125,6 @@ public class Livro {
 	public Autor getAutor() {
 		return autor;
 	}
-
-	@Override
-	public String toString() {
-		return "Livro [titulo=" + titulo + ", resumo=" + resumo + ", sumario=" + sumario + ", preco="
-				+ preco + ", numeroPaginas=" + numeroPaginas + ", isbn=" + isbn + ", dataPublicacao=" + dataPublicacao
-				+ ", categoria=" + categoria.toString() + ", autor=" + autor.toString() + "]";
-	}
-	
-
-	
-	
-	
-	
 	
 	
 	
