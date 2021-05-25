@@ -7,11 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
+
 
 
 @Entity
@@ -19,11 +20,11 @@ public class Autor {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	@NotEmpty @Column(nullable=false)
+	@NotBlank @Column(nullable=false)
 	private String nome;
-	@Email(message="Insira um e-mail válido") @NotEmpty @Column(nullable=false)
+	@Email(message="Insira um e-mail válido") @NotBlank @Column(nullable=false)
 	private String email;
-	@NotEmpty  @Length(max= 400) @Column(nullable=false)
+	@NotBlank  @Length(max= 400) @Column(nullable=false)
 	private String descricao;
 	@NotNull @Column(nullable=false)
 	private LocalDateTime dataCriacao = LocalDateTime.now();

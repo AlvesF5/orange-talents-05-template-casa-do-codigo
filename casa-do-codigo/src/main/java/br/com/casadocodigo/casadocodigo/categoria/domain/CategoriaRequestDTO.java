@@ -2,9 +2,9 @@ package br.com.casadocodigo.casadocodigo.categoria.domain;
 
 import javax.validation.constraints.NotEmpty;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 
-import br.com.casadocodigo.casadocodigo.autor.domain.Autor;
+
+
 import br.com.casadocodigo.casadocodigo.autor.domain.UniqueValue;
 
 public class CategoriaRequestDTO {
