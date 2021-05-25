@@ -14,7 +14,6 @@ import com.sun.istack.NotNull;
 
 
 import br.com.casadocodigo.casadocodigo.autor.domain.UniqueValue;
-import br.com.casadocodigo.casadocodigo.categoria.domain.Categoria;
 import br.com.casadocodigo.casadocodigo.livro.domain.ExisteId;
 import br.com.casadocodigo.casadocodigo.pais.domain.Estado;
 import br.com.casadocodigo.casadocodigo.pais.domain.Pais;

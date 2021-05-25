@@ -1,16 +1,14 @@
 package br.com.casadocodigo.casadocodigo.cliente.domain;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
-import org.springframework.lang.Nullable;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.com.casadocodigo.casadocodigo.pais.domain.Estado;
 import br.com.casadocodigo.casadocodigo.pais.domain.Pais;
@@ -22,40 +20,39 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	//@Column(nullable=false, unique=true)
-	
+	@Column(nullable=false, unique=true)
 	private String email;
 	
-	//@Column(nullable=false)
+	@Column(nullable=false)
 	private String nome;
 	
-	//@Column(nullable=false)
+	@Column(nullable=false)
 	private String sobrenome;
 	
-	//@Column(nullable=false, unique=true)
+	@Column(nullable=false, unique=true)
 	private String documento;
 	
-	//@Column(nullable=false)
+	@Column(nullable=false)
 	private String endereco;
 	
-	//@Column(nullable=false)
+	@Column(nullable=false)
 	private String complemento;
 	
-	//@Column(nullable=false)
+	@Column(nullable=false)
 	private String cidade;
 	
 	
-	//@Column(nullable=false)
-	@OneToOne 
+
+	@ManyToOne 
 	private Pais pais;
 	
-	@OneToOne(optional=true)
+	@ManyToOne(optional=true)
 	private Estado estado;
 	
-	//@Column(nullable=false)
+	@Column(nullable=false)
 	private String telefone;
 	
-	//@Column(nullable=false)
+	@Column(nullable=false)
 	private String cep;
 	
 	
@@ -86,8 +83,6 @@ public class Cliente {
 	public Long getId() {
 		return id;
 	}
-	
-
 	
 
 	public String getEmail() {
